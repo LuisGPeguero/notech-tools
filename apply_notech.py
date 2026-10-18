@@ -289,6 +289,16 @@ def edit_quest(cn, q):
                 t.pop('title', None)
     if qid == '32C20FDE9BB4F43C':  # trash can: TR scrap reward
         q['rewards'] = [{'id': r['id'], 'type': 'xp', 'xp': snbt.Raw('100')} if r.get('item') == 'techreborn:scrap' else r for r in q['rewards']]
+    if qid == '48E5D56C47DF6642':  # Train Tracks: upstream filter lists a BYG track that Steam 'n' Rails never registers
+        def drop(v):
+            if isinstance(v, dict):
+                for x in v.values():
+                    drop(x)
+            elif isinstance(v, list):
+                v[:] = [x for x in v if not (isinstance(x, dict) and x.get('id') == 'railways:track_byg_cherry')]
+                for x in v:
+                    drop(x)
+        drop(q['tasks'])
     deps = q.get('dependencies')
     if deps:
         nd = []
