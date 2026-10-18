@@ -147,7 +147,7 @@ Back the world up first.
 - To redo the conversion after a pack update, see the next section.
 
 ## Step by step: apply_notech.py + make_serverpack.py
-The tools find Prism and the pack on their own (see "Nothing is hard-coded to one PC" above), so they work after a reinstall or on another machine.
+The tools find Prism and the pack on their own, so they work after a reinstall or on another machine.
 
 You need **Python 3.9+** (`python --version` in PowerShell; get it from python.org and tick "Add to PATH").
 
