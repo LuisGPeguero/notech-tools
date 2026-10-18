@@ -33,16 +33,6 @@ The full walkthrough is in [Step by step](#step-by-step-apply_notechpy--make_ser
 | `snbt.py` | Minimal SNBT reader/writer for FTB Quests files |
 | `boot.sh`, `battery.py`, `battery_rcon.py`, `furnace_test.py`, `logdiff.py` | Optional server boot and in-game test harness (see step 6 of the detailed section) |
 
-## Nothing is hard-coded to one PC
-- Prism is found automatically. The scripts check the folder that contains `notech-tools`, then `%APPDATA%\PrismLauncher` (Windows), `~/.local/share/PrismLauncher` and the Flatpak path (Linux), and `~/Library/Application Support/PrismLauncher` (macOS).
-- Every script also takes explicit paths as arguments, which skips discovery.
-- The test harness settings can be overridden with environment variables:
-
-| Variable | Default | Used by |
-|---|---|---|
-| `RCON_HOST` / `RCON_PORT` / `RCON_PASSWORD` | `127.0.0.1` / `25575` / `notechtest` | `battery.py`, `furnace_test.py` |
-| `MEMORY` | `6G` | `boot.sh` (max heap of the test server) |
-
 ## Conversion notes
 - The original instance is never modified. The copy is set to `ManagedPack=false`, so Prism will not "update" it back to the full pack.
 - Nothing is deleted. Every removed file is moved to `<instance>/removed_tech_mods/`, and `CHANGELOG.txt` there logs each change.
