@@ -278,9 +278,8 @@ def edit_quest(cn, q):
     if qid == '1702057B5F68995F':  # Netherite
         q['description'] = q['description'][:5]
     if qid == '01683B1B161E67AB':  # enchanting storage block
-        q['description'][0] = q['description'][0].replace(
-            ' even compatible with AE2! What do you want more, just let a Storage bus face it and you will have access to all your favorite Enchants and Curses!',
-            ' What more could you want? Every favorite Enchant and Curse in one place!')
+        q['description'][0] = re.sub(r', even compatible with AE2!.*?Curses!',
+            '! What more could you want? Every favorite Enchant and Curse in one place!', q['description'][0])
     if qid == '6C01A4BB169520D8':  # guns: optional AE2 Matter Cannon task
         q['tasks'] = [t for t in q['tasks'] if not (isinstance(t.get('item'), dict) and t['item'].get('id') == 'ae2:matter_cannon')]
     if qid == '42D4036B51BBB3F1':  # Hasturian Era "Stage I: Material List": silver came only from TR/MI ores
