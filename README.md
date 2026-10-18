@@ -7,7 +7,15 @@ that depended on the removed mods is repaired. A builder for the matching dedica
 
 Built and tested against Prominence II **v4.1.4**.
 
-> ⚠️ **Not played to completion.** The conversion was checked with automated server tests and static analysis, but nobody has played the pack from start to finish. Some quests, recipes or progression steps may still be broken. Back up your worlds, and report anything that blocks progress.
+> **Unofficial project.** notech-tools is independent and is not affiliated with or endorsed by Cinderstone Studios,
+> ElocinDev, Mojang or Microsoft. Prominence™ is a trademark of Cinderstone Studios LLC.
+> This repo contains no modpack files. Get the original pack yourself from
+> [CurseForge](https://www.curseforge.com/minecraft/modpacks/prominence-2-hasturian-era); the scripts convert your own local copy.
+
+> **Do not redistribute the output.** The converted instance, its questbook, and the server folder/zip built by
+> `make_serverpack.py` contain the pack's files and third-party mod jars, many of which are All Rights Reserved.
+> Use them for yourself and your own server; don't upload or share them publicly without permission from the
+> pack and mod authors.
 
 ## Quick start
 Needs **Python 3.9+** and Prism Launcher with Prominence II installed and launched once.
@@ -206,7 +214,7 @@ The automatic steps above do all of this. This section is the manual version, fo
 
 ```powershell
 $I     = "$env:APPDATA\PrismLauncher\instances"   # or your Prism data folder's instances
-$TOOLS = "<path to this notech-tools checkout>"
+$TOOLS = "$env:APPDATA\PrismLauncher\notech-tools"
 $ORIG  = "$I\Prominence™ II- Hasturian Era"
 $NEW   = "$I\Prominence II - Hasturian Era (No Tech)"
 $MCJAR = "$env:APPDATA\PrismLauncher\libraries\com\mojang\minecraft\1.20.1\minecraft-1.20.1-client.jar"
