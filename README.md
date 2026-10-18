@@ -214,7 +214,7 @@ The automatic steps above do all of this. This section is the manual version, fo
 
 ```powershell
 $I     = "$env:APPDATA\PrismLauncher\instances"   # or your Prism data folder's instances
-$TOOLS = "$env:APPDATA\PrismLauncher\notech-tools"
+$TOOLS = "<path to this notech-tools checkout>"
 $ORIG  = "$I\Prominence™ II- Hasturian Era"
 $NEW   = "$I\Prominence II - Hasturian Era (No Tech)"
 $MCJAR = "$env:APPDATA\PrismLauncher\libraries\com\mojang\minecraft\1.20.1\minecraft-1.20.1-client.jar"
